@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Password_GUI_Generator
@@ -151,6 +145,27 @@ namespace Password_GUI_Generator
             button1.Location = new Point(
                 rnd.Next(0, this.Width - 50),
                 rnd.Next(0, this.Height - 50));
+        }
+
+        private void textBox1_MouseEnter(object sender, EventArgs e)
+        {
+            //Создаём новый экземпляр генератора псевдослучайных чисел
+            Random rnd = new Random();
+            //Перемещаем кнопку на случайную позицию
+            textBox1.Location = new Point(
+                rnd.Next(0, this.Width - 50),
+                rnd.Next(0, this.Height - 50));
+        }
+
+        private void Form1_MouseMove(object sender, MouseEventArgs e)
+        {
+            //Создаём новый экземпляр генератора псевдослучайных чисел
+            Random rnd = new Random();
+            //Перемещаем кнопку на случайную позицию
+            button1.Location = new Point(
+                rnd.Next(0, this.Width - 50),
+                rnd.Next(0, this.Height - 50));
+
         }
 
         //public void textBox1_KeyPress(object sender, KeyPressEventArgs e)
