@@ -159,13 +159,34 @@ namespace Password_GUI_Generator
 
         private void Form1_MouseMove(object sender, MouseEventArgs e)
         {
-            //Создаём новый экземпляр генератора псевдослучайных чисел
-            Random rnd = new Random();
-            //Перемещаем кнопку на случайную позицию
-            button1.Location = new Point(
-                rnd.Next(0, this.Width - 50),
-                rnd.Next(0, this.Height - 50));
+            ////Создаём новый экземпляр генератора псевдослучайных чисел
+            //Random rnd = new Random();
+            ////Перемещаем кнопку на случайную позицию
+            //button1.Location = new Point(
+            //    rnd.Next(0, this.Width - 50),
+            //    rnd.Next(0, this.Height - 50));
 
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
+            // if (textBox2.Text == @"1111")
+            // {
+            Application.Exit();
+            //this.Close();
+           // }
+        }
+
+        Random r = new Random();
+        private void Form1_Click(object sender, EventArgs e)
+        {
+            int red = r.Next(255);
+            int green = r.Next(255);
+            int blue = r.Next(255);
+            Color color = Color.FromArgb(red, green, blue);
+            this.BackColor = color;
+            this.Text = "R: " + red + " G: " + green + " B: " + blue;
         }
 
         //public void textBox1_KeyPress(object sender, KeyPressEventArgs e)
