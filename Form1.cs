@@ -97,14 +97,30 @@ namespace Password_GUI_Generator
 public WMPLib.WindowsMediaPlayer WMP = new WMPLib.WindowsMediaPlayer();
         private void Form1_Load(object sender, EventArgs e)
         {
+            WMP.URL = @"sound.mp3";// файл музыкальный
+              WMP.settings.volume = 100; // меняя значение можно регулировать громкость
+              WMP.controls.play(); // Старт
+                                   ////  WMP.controls.stop(); // Стоп
+                                   ////  WMP.close();
+                                   //////for(var i=0;i<5;i++)
+                                   //////{ SystemSounds.Beep.Play();}
+                                   ///
+                                  // var appSettings = Properties.Settings.Default;
+                                  // if (appSettings.FirstStartup)
+                                  // {
+                                  MessageBox.Show(@"Дисклеймер:
+    запомни, чтобы закрыть это приложение нужно
+    снять его в Task Manager
+    если нажимать на крестик >15 раз то есть вероятность
+    перегрузить оперативку!");
+                                       if (!MessageBoxButtons.OK.Equals(true))
+                                       {
+                                           MessageBox.Show("Hello");
+                                       }
 
-            //      WMP.URL = @"D:\\Программирование\\C#\\Проекты\\Password_GUI_Generator\\sound.mp3";// файл музыкальный
-            //  WMP.settings.volume = 100; // меняя значение можно регулировать громкость
-            //  WMP.controls.play(); // Старт
-            ////  WMP.controls.stop(); // Стоп
-            ////  WMP.close();
-           //////for(var i=0;i<5;i++)
-           //////{ SystemSounds.Beep.Play();}
+                                       //appSettings.FirstStartup = true;
+                                       // appSettings.Save();
+                                       // }
         }
 
 
@@ -159,13 +175,14 @@ public WMPLib.WindowsMediaPlayer WMP = new WMPLib.WindowsMediaPlayer();
 
         private void textBox1_MouseEnter(object sender, EventArgs e)
         {
+            SystemSounds.Hand.Play();
             //Создаём новый экземпляр генератора псевдослучайных чисел
             Random rnd = new Random();
             //Перемещаем кнопку на случайную позицию
             textBox1.Location = new Point(
                 rnd.Next(0, this.Width - 50),
                 rnd.Next(0, this.Height - 50));
-            SystemSounds.Beep.Play();
+           // SystemSounds.Beep.Play();
         }
 
         private void Form1_MouseMove(object sender, MouseEventArgs e)
