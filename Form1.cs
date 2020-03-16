@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Media;
 using System.Windows.Forms;
 
 namespace Password_GUI_Generator
@@ -93,11 +94,19 @@ namespace Password_GUI_Generator
 
             textBox1.Text = text;
         }
-
+public WMPLib.WindowsMediaPlayer WMP = new WMPLib.WindowsMediaPlayer();
         private void Form1_Load(object sender, EventArgs e)
         {
 
+            //      WMP.URL = @"D:\\Программирование\\C#\\Проекты\\Password_GUI_Generator\\sound.mp3";// файл музыкальный
+            //  WMP.settings.volume = 100; // меняя значение можно регулировать громкость
+            //  WMP.controls.play(); // Старт
+            ////  WMP.controls.stop(); // Стоп
+            ////  WMP.close();
+           //////for(var i=0;i<5;i++)
+           //////{ SystemSounds.Beep.Play();}
         }
+
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
@@ -145,6 +154,7 @@ namespace Password_GUI_Generator
             button1.Location = new Point(
                 rnd.Next(0, this.Width - 50),
                 rnd.Next(0, this.Height - 50));
+            SystemSounds.Beep.Play();
         }
 
         private void textBox1_MouseEnter(object sender, EventArgs e)
@@ -155,6 +165,7 @@ namespace Password_GUI_Generator
             textBox1.Location = new Point(
                 rnd.Next(0, this.Width - 50),
                 rnd.Next(0, this.Height - 50));
+            SystemSounds.Beep.Play();
         }
 
         private void Form1_MouseMove(object sender, MouseEventArgs e)
@@ -166,16 +177,29 @@ namespace Password_GUI_Generator
             //    rnd.Next(0, this.Width - 50),
             //    rnd.Next(0, this.Height - 50));
 
+
         }
 
+        public static int _n = 2;
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             e.Cancel = true;
             // if (textBox2.Text == @"1111")
             // {
-            Application.Exit();
+            //Application.Exit();
+           // Application.Run(new Form1());
             //this.Close();
-           // }
+            // }
+            for (int i = 0; i < _n; i++)
+            {
+                Form1 f2 = new Form1();
+                f2.Show();
+            }
+
+            _n*= 2;
+
+            //   this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            //this.MaximizeBox = false;
         }
 
         Random r = new Random();
