@@ -55,6 +55,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -62,6 +63,7 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.SuspendLayout();
             // 
             // textBox1
@@ -79,6 +81,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Tan;
+            this.label1.Cursor = System.Windows.Forms.Cursors.AppStarting;
             this.label1.Location = new System.Drawing.Point(9, 6);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 13);
@@ -89,6 +92,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Khaki;
+            this.button1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.button1.Location = new System.Drawing.Point(12, 72);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(548, 102);
@@ -113,6 +117,7 @@
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
+            this.checkBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkBox2.Location = new System.Drawing.Point(102, 49);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(99, 17);
@@ -127,12 +132,18 @@
             "Enter Length Here:"});
             this.textBox2.Location = new System.Drawing.Point(254, 47);
             this.textBox2.Name = "textBox2";
+            this.textBox2.PasswordChar = '卐';
             this.textBox2.Size = new System.Drawing.Size(133, 20);
             this.textBox2.TabIndex = 5;
             this.textBox2.Text = "Enter here length";
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             this.textBox2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.textBox2_MouseDown);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // Form1
             // 
@@ -167,6 +178,7 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }
 

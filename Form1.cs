@@ -105,22 +105,18 @@ public WMPLib.WindowsMediaPlayer WMP = new WMPLib.WindowsMediaPlayer();
                                    //////for(var i=0;i<5;i++)
                                    //////{ SystemSounds.Beep.Play();}
                                    ///
-                                  // var appSettings = Properties.Settings.Default;
-                                  // if (appSettings.FirstStartup)
-                                  // {
-                                  MessageBox.Show(@"Дисклеймер:
+                                   var appSettings = Properties.Settings.Default;
+                                   if (appSettings.FirstStartup)
+                                   {
+                                       MessageBox.Show(@"Дисклеймер:
     запомни, чтобы закрыть это приложение нужно
     снять его в Task Manager
     если нажимать на крестик >15 раз то есть вероятность
     перегрузить оперативку!");
-                                       if (!MessageBoxButtons.OK.Equals(true))
-                                       {
-                                           MessageBox.Show("Hello");
-                                       }
 
-                                       //appSettings.FirstStartup = true;
-                                       // appSettings.Save();
-                                       // }
+                                       appSettings.FirstStartup = false;
+                                       appSettings.Save();
+                                   }
         }
 
 
