@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Password_GUI_Generator
-{
+{ 
     static class Program
     {
         /// <summary>
